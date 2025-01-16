@@ -20,8 +20,16 @@ func startRepl() {
 	  if len(cmdWords) == 0 {
 		continue
 	  }
-  
-	  fmt.Printf("Your command was: %s\n", cmdWords[0])
+	  
+	  cmdKey := cmdWords[0]
+	  cmd, exists := getCommands()[cmdKey]
+
+	  if !exists {
+		fmt.Println("Unknown command")
+		continue
+	  }
+	  
+	  cmd.callback()
 	}
 }
 
