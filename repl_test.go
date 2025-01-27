@@ -3,18 +3,18 @@ package main
 import "testing"
 
 type CleanInputTestArgs struct {
-	input string
+	input    string
 	expected []string
 }
 
 func TestCleanInput(t *testing.T) {
-	cases := []CleanInputTestArgs {
+	cases := []CleanInputTestArgs{
 		{
-			input: "  hello world   ",
+			input:    "  hello world   ",
 			expected: []string{"hello", "world"},
 		},
 		{
-			input: "CHarm   buLB ser",
+			input:    "CHarm   buLB ser",
 			expected: []string{"charm", "bulb", "ser"},
 		},
 	}
